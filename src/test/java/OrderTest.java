@@ -1,0 +1,17 @@
+import org.junit.Test;
+
+public class OrderTest {
+    @Test
+    public void testingMakeParcelFunctionality(){
+        Order order = new Order();
+        order.makeParcel(1,1,1);
+        assertEquals(order.getTotalCost(), 3);
+    }
+    @Test
+    public void testingMakeOrderSpeedyShippingFunctionality(){
+        Order order = new Order();
+        order.makeParcel(1,1,1);
+        order.makeSpeedyShipping();
+        assertEquals(order.getTotalCost(), 6);
+    }
+}
