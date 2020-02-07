@@ -15,8 +15,8 @@ public class Order {
     /*
     Method to make the parcel in the order.
      */
-    public void makeParcel(int heightIn, int widthIn, int lengthIn){
-        parcel = new Parcel(heightIn, widthIn, lengthIn);
+    public void makeParcel(int heightIn, int widthIn, int lengthIn, double weightIn){
+        parcel = new Parcel(heightIn, widthIn, lengthIn, weightIn);
         totalCost = parcel.getCost();
     }
 

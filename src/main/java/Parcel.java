@@ -4,15 +4,49 @@ public class Parcel {
     private int height;
     private int width;
     private int length;
+    private double weight;
 
     /*
-    Constructor for parcel, takes in dimensions of the parcel and assigns the cost and size accordingly.
+    Constructor for parcel, takes in dimensions and weight of the parcel and assigns the cost and size accordingly.
      */
-    public Parcel(int heightIn, int widthIn, int lengthIn){
+    public Parcel(int heightIn, int widthIn, int lengthIn, double weightIn){
         height = heightIn;
         width = widthIn;
         length = lengthIn;
+        weight = weightIn;
         assignCostAndSize();
+        checkWeight();
+    }
+
+    /*
+    Method which checks the size and weight of the parcel and adjusts the costs if needed.
+     */
+    private void checkWeight(){
+        if(size == Sizes.SMALL){
+            updateCostWithWeight(1);
+        }
+        else if(size == Sizes.MEDIUM){
+            updateCostWithWeight(3);
+        }
+        else if(size == Sizes.LARGE){
+            updateCostWithWeight(6);
+        }
+        else{
+            updateCostWithWeight(10);
+        }
+    }
+
+    /*
+    Method which calculates the difference of weight between the weight and desired weight of the parcel. Changes cost if needed.
+     */
+    private void updateCostWithWeight(double desiredWeight){
+        int weightDifference = (int) Math.ceil(weight - desiredWeight);
+        if(weight <= desiredWeight){
+            //do nothing
+        }
+        else{
+            cost = cost + (2 * weightDifference);
+        }
     }
 
     /*

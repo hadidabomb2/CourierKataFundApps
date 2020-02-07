@@ -41,7 +41,7 @@ public class ParcelTest {
     @Test
     public void testingForOverWeightParcel(){
         Parcel parcel = new Parcel(10,10,10,5.5);
-        assertEquals(parcel.getCost(), 8);
+        assertEquals(parcel.getCost(), 14);
     }
 
 }
