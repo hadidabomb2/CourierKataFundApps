@@ -5,6 +5,9 @@ public class Parcel {
     private int width;
     private int length;
 
+    /*
+    Constructor for parcel, takes in dimensions of the parcel and assigns the cost and size accordingly.
+     */
     public Parcel(int heightIn, int widthIn, int lengthIn){
         height = heightIn;
         width = widthIn;
@@ -12,6 +15,9 @@ public class Parcel {
         assignCostAndSize();
     }
 
+    /*
+    Method assigns the cost and size of the parcel depending on the parcels dimensions.
+     */
     private void assignCostAndSize(){
         int largestDimension = findLargestDimension();
 
@@ -33,6 +39,9 @@ public class Parcel {
         }
     }
 
+    /*
+    Method finds the largest dimension of the parcel and returns it.
+     */
     private int findLargestDimension(){
         int largestDimension = height;
         if(width > largestDimension){
@@ -44,10 +53,16 @@ public class Parcel {
         return largestDimension;
     }
 
+    /*
+    Returns the size of the parcel.
+     */
     public Sizes getSize(){
         return size;
     }
 
+    /*
+    Returns the cost of the parcel.
+     */
     public int getCost(){
         return cost;
     }
