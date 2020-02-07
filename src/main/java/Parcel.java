@@ -1,4 +1,4 @@
-public class Parcel {
+public class Parcel implements Comparable<Parcel> {
     private int cost;
     private Types type;
     private int height;
@@ -104,5 +104,21 @@ public class Parcel {
      */
     public int getCost(){
         return cost;
+    }
+
+    /*
+    Compares this parcel to another parcel by cost.
+     */
+    @Override
+    public int compareTo(Parcel parcel) {
+        if(this.getCost() < parcel.getCost()){
+            return 1;
+        }
+        else if(this.getCost() > parcel.getCost()){
+            return -1;
+        }
+        else{
+            return 0;
+        }
     }
 }
