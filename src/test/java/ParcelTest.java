@@ -43,5 +43,16 @@ public class ParcelTest {
         Parcel parcel = new Parcel(10,10,10,5.5);
         assertEquals(parcel.getCost(), 14);
     }
+    @Test
+    public void testingForHeavyWeightParcelProperties(){
+        Parcel parcel = new Parcel(10,10,10,50);
+        assertEquals(parcel.getCost(), 50);
+    }
+    @Test
+    public void testingForOverWeightHeavyParcel(){
+        Parcel parcel = new Parcel(10,10,10,55.5);
+        assertEquals(parcel.getCost(), 56);
+    }
+
 
 }
