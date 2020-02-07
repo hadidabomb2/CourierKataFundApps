@@ -1,6 +1,6 @@
 public class Parcel {
     private int cost;
-    private Sizes size;
+    private Types type;
     private int height;
     private int width;
     private int length;
@@ -22,13 +22,13 @@ public class Parcel {
     Method which checks the size and weight of the parcel and adjusts the costs if needed.
      */
     private void checkWeight(){
-        if(size == Sizes.SMALL){
+        if(type == Types.SMALL){
             updateCostWithWeight(1);
         }
-        else if(size == Sizes.MEDIUM){
+        else if(type == Types.MEDIUM){
             updateCostWithWeight(3);
         }
-        else if(size == Sizes.LARGE){
+        else if(type == Types.LARGE){
             updateCostWithWeight(6);
         }
         else{
@@ -57,19 +57,19 @@ public class Parcel {
 
         if(largestDimension < 10){
             cost = 3;
-            size = Sizes.SMALL;
+            type = Types.SMALL;
         }
         else if(largestDimension < 50){
             cost = 8;
-            size = Sizes.MEDIUM;
+            type = Types.MEDIUM;
         }
         else if(largestDimension < 100){
             cost = 15;
-            size = Sizes.LARGE;
+            type = Types.LARGE;
         }
         else{
             cost = 25;
-            size = Sizes.XL;
+            type = Types.XL;
         }
     }
 
@@ -90,8 +90,8 @@ public class Parcel {
     /*
     Returns the size of the parcel.
      */
-    public Sizes getSize(){
-        return size;
+    public Types getType(){
+        return type;
     }
 
     /*

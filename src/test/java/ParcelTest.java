@@ -8,25 +8,25 @@ public class ParcelTest {
     public void testingSmallParcelProperties(){
         Parcel parcel = new Parcel(1,1,1, 1);
         assertEquals(parcel.getCost(), 3);
-        assertEquals(parcel.getSize(), Sizes.SMALL);
+        assertEquals(parcel.getType(), Types.SMALL);
     }
     @Test
     public void testingMediumParcelProperties(){
         Parcel parcel = new Parcel(10,10,1, 1);
         assertEquals(parcel.getCost(), 8);
-        assertEquals(parcel.getSize(), Sizes.MEDIUM);
+        assertEquals(parcel.getType(), Types.MEDIUM);
     }
     @Test
     public void testingLargeParcelProperties(){
         Parcel parcel = new Parcel(50,5,50, 1);
         assertEquals(parcel.getCost(), 15);
-        assertEquals(parcel.getSize(), Sizes.LARGE);
+        assertEquals(parcel.getType(), Types.LARGE);
     }
     @Test
     public void testingXLParcelProperties(){
         Parcel parcel = new Parcel(100,100,10, 1);
         assertEquals(parcel.getCost(), 25);
-        assertEquals(parcel.getSize(), Sizes.XL);
+        assertEquals(parcel.getType(), Types.XL);
     }
     @Test
     public void testingForUnderWeightParcel(){
