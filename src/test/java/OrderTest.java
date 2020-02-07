@@ -13,7 +13,8 @@ public class OrderTest {
     public void testingMakeOrderSpeedyShippingFunctionality(){
         Order order = new Order();
         order.makeParcel(1,1,1);
-        order.makeSpeedyShipping();
+        order.toggleSpeedyShipping();
+        order.finishOrder();
         assertEquals(order.getTotalCost(), 6);
     }
 }
