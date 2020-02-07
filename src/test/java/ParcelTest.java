@@ -53,6 +53,14 @@ public class ParcelTest {
         Parcel parcel = new Parcel(10,10,10,55.5);
         assertEquals(parcel.getCost(), 56);
     }
+    @Test
+    public void testingCompareToFunctionality(){
+        Parcel biggerParcel = new Parcel(10,10,10,10);
+        Parcel smallerParcel = new Parcel(1,1,1,1);
+        assertEquals(smallerParcel.compareTo(biggerParcel), 1);
+        assertEquals(biggerParcel.compareTo(smallerParcel), -1);
+        assertEquals(biggerParcel.compareTo(biggerParcel), 0);
+    }
 
 
 }
